@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Oswald:wght@200..700&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+.f-oswald{
+    font-family: "Oswald", sans-serif;
+}
+
+.f-lato{
+    font-family: "Lato", sans-serif;
+}
