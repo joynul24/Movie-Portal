@@ -5,6 +5,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './COMPONENTS/ErrorPage.jsx'
 import MainLayout from './MainLayout/MainLayout.jsx'
 import AllMovies from './COMPONENTS/NavPages/AllMovies/AllMovies.jsx'
+import ContactUs from './COMPONENTS/NavPages/ContactUs/ContactUs.jsx'
+import AddMovies from './COMPONENTS/NavPages/AddMovies/AddMovies.jsx'
+import MyFavorite from './COMPONENTS/NavPages/MyFavorite/MyFavorite.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +18,18 @@ const router = createBrowserRouter([
       {
         path: '/allMovies',
         element: <AllMovies></AllMovies>
+      },
+      {
+        path: '/contactUs',
+        element: <ContactUs></ContactUs>
+      },
+      {
+        path: '/addMovies',
+        element: <AddMovies></AddMovies>
+      },
+      {
+        path: '/myFavorite',
+        element: <MyFavorite></MyFavorite>
       }
     ]
   }
