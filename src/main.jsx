@@ -9,6 +9,8 @@ import ContactUs from './COMPONENTS/NavPages/ContactUs/ContactUs.jsx'
 import AddMovies from './COMPONENTS/NavPages/AddMovies/AddMovies.jsx'
 import MyFavorite from './COMPONENTS/NavPages/MyFavorite/MyFavorite.jsx'
 import Home from './COMPONENTS/NavPages/Home/Home.jsx'
+import { ToastContainer } from 'react-toastify'
+import FeaturedMovie from './COMPONENTS/HomeRoute/FeaturedMovie.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,8 @@ const router = createBrowserRouter([
     children: [
       {
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader: ()=> fetch('http://localhost:5000/movies')
       },
       {
         path: '/allMovies',
@@ -35,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/myFavorite',
         element: <MyFavorite></MyFavorite>
+      },
+      {
+        path: '/featuredMovie',
+        element: <FeaturedMovie></FeaturedMovie>,
       }
     ]
   }
@@ -42,5 +49,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}></RouterProvider>
+    <ToastContainer />
   </StrictMode>,
 )
