@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import { FaRegHeart } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
-import { Link } from "react-router-dom";
 
-const MovieCard = ({ movie }) => {
+const AllMovie = ({ movie }) => {
   const { title, genre, duration, year, rating, poster } = movie;
   const numberRating = parseInt(rating);
   return (
@@ -36,11 +35,6 @@ const MovieCard = ({ movie }) => {
               <FaRegHeart></FaRegHeart>
             </button>
           </div>
-          <Link to='/allMovies'>
-            <p className="underline font-bold text-[#e2435d] hover:text-black mt-2">
-              See All Movies
-            </p>
-          </Link>
           <div className="mt-10">
             <button className="btn w-full bg-[#E4D804] hover:bg-black hover:text-white hover:border-[#E4D804]">
               See Details
@@ -52,4 +46,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default AllMovie;

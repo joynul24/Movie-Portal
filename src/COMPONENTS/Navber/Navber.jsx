@@ -12,7 +12,7 @@ const Navber = () => {
     </>
 
   return (
-    <div className=" bg-[#1F1F1F]">
+    <div className="sticky z-50 top-0  bg-[#1F1F1F]">
       <div className="navbar py-4 container mx-auto">
         <div className="navbar-start">
           <div className="dropdown text-white">
