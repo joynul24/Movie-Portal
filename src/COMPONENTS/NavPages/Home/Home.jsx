@@ -1,9 +1,11 @@
-import Navber from "../../Navber/Navber";
+import Banner from "../../Banner/Banner";
+import FeaturedMovie from "../../HomeRoute/FeaturedMovie";
 
 function Home() {
   return (
     <>
-      <Navber></Navber>
+      <Banner></Banner>
+      <FeaturedMovie></FeaturedMovie>
     </>
   );
 }

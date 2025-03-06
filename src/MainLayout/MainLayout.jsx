@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Home from "../COMPONENTS/NavPages/Home/Home";
 import Footer from "../COMPONENTS/Footer/Footer";
+import Navber from "../COMPONENTS/Navber/Navber";
 
 const MainLayout = () => {
     return (
         <div className="bg-[#000000]">
-            <Home></Home>
+            <Navber></Navber>
             <div className="min-h-[calc(100vh-298px)]">
             <Outlet></Outlet>
             </div>

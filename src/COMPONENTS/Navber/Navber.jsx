@@ -15,7 +15,7 @@ const Navber = () => {
     <div className=" bg-[#1F1F1F]">
       <div className="navbar py-4 container mx-auto">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown text-white">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow f-lato text-white"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-black f-lato"
             >
               {links}
             </ul>

@@ -8,6 +8,7 @@ import AllMovies from './COMPONENTS/NavPages/AllMovies/AllMovies.jsx'
 import ContactUs from './COMPONENTS/NavPages/ContactUs/ContactUs.jsx'
 import AddMovies from './COMPONENTS/NavPages/AddMovies/AddMovies.jsx'
 import MyFavorite from './COMPONENTS/NavPages/MyFavorite/MyFavorite.jsx'
+import Home from './COMPONENTS/NavPages/Home/Home.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     element: <MainLayout></MainLayout>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
+      {
+        path:'/',
+        element:<Home></Home>
+      },
       {
         path: '/allMovies',
         element: <AllMovies></AllMovies>

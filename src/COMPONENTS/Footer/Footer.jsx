@@ -2,7 +2,8 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer sm:footer-horizontal bg-[#1F1F1F] text-white p-10">
+  <footer className="bg-[#1F1F1F] ">
+      <div className="footer sm:footer-horizontal text-white p-10">
       <nav>
         <h6 className="footer-title">Services</h6>
         <a className="link link-hover hover:text-[#E4D804]">Branding</a>
@@ -25,7 +26,13 @@ const Footer = () => {
          <p><FaInstagram></FaInstagram></p>
         </div>
       </nav>
-    </footer>
+    </div>
+    <div>
+    <aside>
+    <p className="text-white mt-5 justify-center flex">Copyright © {new Date().getFullYear()} - All right reserved by MOvie Portal Industries Ltd</p>
+  </aside>
+    </div>
+  </footer>
   );
 };
 
