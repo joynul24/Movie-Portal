@@ -1,14 +1,12 @@
 /* eslint-disable react/prop-types */
-import { FaRegHeart } from "react-icons/fa";
-import ReactStars from "react-rating-stars-component";
+import { FaRegHeart, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
-  const { title, genre, duration, year, rating, poster } = movie;
-  const numberRating = parseInt(rating);
+  const {_id, title, genre, duration, year, poster } = movie;
   return (
     <div>
-      <div className="card bg-base-100 shadow-sm transition duration-500 hover:scale-105 overflow-hidden">
+      <div className="card bg-base-100 shadow-sm transition duration-500 hover:scale-105 overflow-hidden hover:border-[#E4D804] hover:border-2">
         <figure className="h-[400px]">
           <img className="h-full w-full" src={poster} alt="movie images" />
         </figure>
@@ -25,26 +23,23 @@ const MovieCard = ({ movie }) => {
           </div>
           {/* 3 row */}
           <div className="flex justify-between items-center mt-2">
-            <p>
-              <ReactStars
-                count={numberRating}
-                size={24}
-                activeColor="#ffd700"
-              />
-            </p>
+            {/* rating */}
+            <span className="flex"><FaStar className="text-orange-300"></FaStar><FaStar className="text-orange-300"></FaStar><FaStar className="text-orange-300"></FaStar><FaStar className="text-orange-300"></FaStar></span>
             <button className="btn rounded-full text-xl hover:bg-[#E4D804] hover:border-black">
               <FaRegHeart></FaRegHeart>
             </button>
           </div>
-          <Link to='/allMovies'>
+          <Link to="/allMovies">
             <p className="underline font-bold text-[#e2435d] hover:text-black mt-2">
               See All Movies
             </p>
           </Link>
           <div className="mt-10">
-            <button className="btn w-full bg-[#E4D804] hover:bg-black hover:text-white hover:border-[#E4D804]">
-              See Details
-            </button>
+            <Link to={`/movieDetails/${_id}`}>
+              <button className="btn w-full bg-[#E4D804] hover:bg-black hover:text-white hover:border-[#E4D804]">
+                See Details
+              </button>
+            </Link>
           </div>
         </div>
       </div>
