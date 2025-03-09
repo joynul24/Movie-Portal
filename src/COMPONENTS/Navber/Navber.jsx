@@ -1,15 +1,42 @@
 import { Link, NavLink } from "react-router-dom";
 import {} from "./Navber.css";
+import { useContext } from "react";
+import { AuthContext } from "../../porvider/AuthProvider";
 
 const Navber = () => {
+  const { user, signOutUser } = useContext(AuthContext);
 
-    const links = <>
-    <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/allMovies'>All Movies</NavLink></li>
-    <li><NavLink to='/contactUs'>Contact Us</NavLink></li>
-    <li><NavLink to='/addMovies'>Add Movies</NavLink></li>
-    <li><NavLink to='/myFavorite'>My Favorite</NavLink></li>
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {})
+      .catch((error) => {
+        console.log("Error", error.message);
+      });
+  };
+
+  const links = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/allMovies">All Movies</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contactUs">Contact Us</NavLink>
+      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/addMovies">Add Movies</NavLink>
+          </li>
+          <li>
+            <NavLink to="/myFavorite">My Favorite</NavLink>
+          </li>
+        </>
+      )}
     </>
+  );
 
   return (
     <div className="sticky z-50 top-0  bg-[#1F1F1F]">
@@ -41,19 +68,52 @@ const Navber = () => {
             </ul>
           </div>
           <div className="flex items-center gap-2">
-            <img className="w-8 md:w-12" src="https://joynul2024.sirv.com/movie%20portal%20resource/logo.png" alt="" />
-          <Link to='/'>
-          <h3 className="md:text-xl md:font-semibold f-oswald text-[#E4D804] pt-2">Movie Portal</h3>
-          </Link>
+            <img
+              className="w-8 md:w-12"
+              src="https://joynul2024.sirv.com/movie%20portal%20resource/logo.png"
+              alt=""
+            />
+            <Link to="/">
+              <h3 className="md:text-xl md:font-semibold f-oswald text-[#E4D804] pt-2">
+                Movie Portal
+              </h3>
+            </Link>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 f-lato text-white font-semibold">
-           {links}
+            {links}
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to='/login'><button className="btn bg-[#000000] text-white hover:bg-[#E4D804] hover:text-black border-[#E4D804] f-lato">Sign In</button></Link>
+          {user ? (
+            <div className="flex gap-2 items-center">
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={user?.displayName}
+              >
+                <div className="rounded-full">
+                  <img
+                    className="border-white border-2 rounded-full w-[50px]"
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                </div>
+              </div>
+              <button
+                onClick={handleSignOut}
+                className="btn bg-red-400 border-0 hover:bg-red-500 text-white"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="btn bg-[#000000] text-white hover:bg-[#E4D804] hover:text-black border-[#E4D804] f-lato">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import MovieCard from "./MovieCard";
 const FeaturedMovie = () => {
 
   const movies = useLoaderData()
+
   return (
     <div className="container mx-auto text-white mt-5 md:mt-20 mb-20">
       <h1 className="f-oswald md:text-3xl lg:text-4xl font-bold text-center">Featured Movies</h1>
@@ -13,7 +14,7 @@ const FeaturedMovie = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 md:mt-12 px-2 md:px-0">
         {
-          movies.slice(0,6).map(movie => <MovieCard key={movie._id} movie={movie}></MovieCard>)
+          movies.slice(0,6).map(movie => <MovieCard key={movie._id} movie={movie} movies={movies}></MovieCard>)
         }
       </div>
     </div>

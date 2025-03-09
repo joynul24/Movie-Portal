@@ -13,6 +13,10 @@ import { ToastContainer } from "react-toastify";
 import FeaturedMovie from "./COMPONENTS/HomeRoute/FeaturedMovie.jsx";
 import AllMovie from "./COMPONENTS/AllMovie/AllMovie.jsx";
 import MovieDetails from "./COMPONENTS/HomeRoute/MovieDetails.jsx";
+import Register from "./COMPONENTS/Register/Register.jsx";
+import Login from "./COMPONENTS/Navber/Login/Login.jsx";
+import AuthProvider from "./porvider/AuthProvider.jsx";
+import PrivateRoute from "./COMPONENTS/routes/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,11 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addMovies",
-        element: <AddMovies></AddMovies>,
+        element:<PrivateRoute> <AddMovies></AddMovies></PrivateRoute>,
       },
       {
         path: "/myFavorite",
-        element: <MyFavorite></MyFavorite>,
+        element: <PrivateRoute><MyFavorite></MyFavorite></PrivateRoute>,
       },
       {
         path: "/featuredMovie",
@@ -60,12 +64,22 @@ const router = createBrowserRouter([
         },
         element: <MovieDetails></MovieDetails>,
       },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
     ],
   },
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
     <ToastContainer />
   </StrictMode>
 );

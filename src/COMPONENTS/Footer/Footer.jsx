@@ -5,11 +5,11 @@ const Footer = () => {
   <footer className="bg-[#1F1F1F] ">
       <div className="footer sm:footer-horizontal text-white p-10">
       <nav>
-        <h6 className="footer-title">Services</h6>
-        <a className="link link-hover hover:text-[#E4D804]">Branding</a>
-        <a className="link link-hover hover:text-[#E4D804]">Design</a>
-        <a className="link link-hover hover:text-[#E4D804]">Marketing</a>
-        <a className="link link-hover hover:text-[#E4D804]">Advertisement</a>
+        <h6 className="footer-title">Legal & Policy Section</h6>
+        <a className="link link-hover hover:text-[#E4D804]">Terms of Service</a>
+        <a className="link link-hover hover:text-[#E4D804]">Privacy Policy</a>
+        <a className="link link-hover hover:text-[#E4D804]">Cookie Policy</a>
+        <a className="link link-hover hover:text-[#E4D804]">Copyrigth & DMCA</a>
       </nav>
       <nav>
         <h6 className="footer-title">Company</h6>
