@@ -27,12 +27,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/movies"),
+        loader: () => fetch("https://a10-movie-portal-server-jyig3uo1g-joynul2024s-projects.vercel.app/movies"),
       },
       {
         path: "/allMovies",
         element: <AllMovies></AllMovies>,
-        loader: () => fetch("http://localhost:5000/movies"),
+        loader: () => fetch("https://a10-movie-portal-server-jyig3uo1g-joynul2024s-projects.vercel.app/movies"),
       },
       {
         path: "/contactUs",
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: "/movieDetails/:id",
         loader: async ({ params }) => {
-          const res = await fetch("http://localhost:5000/movies");
+          const res = await fetch("https://a10-movie-portal-server-jyig3uo1g-joynul2024s-projects.vercel.app/movies");
           const datas = await res.json();
           const singleData = datas.find((data) => data._id == params.id);
           return singleData;

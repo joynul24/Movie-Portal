@@ -36,7 +36,7 @@ const AddMovies = () => {
       poster,
       summary,
     };
-    fetch("http://localhost:5000/movies", {
+    fetch("https://a10-movie-portal-server-jyig3uo1g-joynul2024s-projects.vercel.app/movies", {
       method: "POST",
       headers: {
         "content-type": "application/json",
