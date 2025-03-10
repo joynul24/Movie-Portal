@@ -1,15 +1,23 @@
 /* eslint-disable react/prop-types */
 import { useContext, useState } from "react";
-import { FaRegHeart, FaStar } from "react-icons/fa";
+import { FaRegHeart} from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link} from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../porvider/AuthProvider";
-
+import { Rating, Star } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 const MovieCard = ({ movie, movies }) => {
-  const { _id, title, genre, duration, year, poster } = movie;
+  const { _id, title, rating, genre, duration, year, poster } = movie;
   const [allMovies, setAllMovies] = useState(movies);
+  const numberRating = parseInt(rating)
+  console.log(numberRating);
   const {user} = useContext(AuthContext);
+  const myStyles = {
+     itemShapes: Star ,
+     activeFillColor: '#ffb700',
+     inactiveFillColor: '#fbf1a9',
+  } 
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -66,12 +74,12 @@ const MovieCard = ({ movie, movies }) => {
           {/* 3 row */}
           <div className="flex justify-between items-center mt-2">
             {/* rating */}
-            <span className="flex">
-              <FaStar className="text-orange-300"></FaStar>
-              <FaStar className="text-orange-300"></FaStar>
-              <FaStar className="text-orange-300"></FaStar>
-              <FaStar className="text-orange-300"></FaStar>
-            </span>
+            <Rating 
+             style={{maxWidth: 100}}
+             value={numberRating}
+             itemStyles={myStyles}
+             readOnly
+            ></Rating>
             <div className="flex items-center">
               <span className=" hover:bg-gray-300 hover:rounded-full p-2 text-2xl text-red-400 cursor-pointer">
                 <button onClick={() => handleDelete(_id)}>

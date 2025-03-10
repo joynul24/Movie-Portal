@@ -1,16 +1,24 @@
 /* eslint-disable react/prop-types */
-import {useContext, useState } from "react";
-import { FaRegHeart, FaStar } from "react-icons/fa";
+import { useContext, useState } from "react";
+import { FaRegHeart } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../porvider/AuthProvider";
+import { Rating, Star } from "@smastrom/react-rating";
 
 const AllMovie = ({ movie }) => {
-  const { _id, title, genre, duration, year, poster } = movie;
+  const { _id, rating, title, genre, duration, year, poster } = movie;
   const allMovies = useLoaderData();
   const [movies, setMovies] = useState(allMovies);
-  const {user} = useContext(AuthContext);
+  const numberRating = parseInt(rating)
+  const { user } = useContext(AuthContext);
+
+  const myStyles = {
+    itemShapes: Star ,
+    activeFillColor: '#ffb700',
+    inactiveFillColor: '#fbf1a9',
+ }
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -67,15 +75,17 @@ const AllMovie = ({ movie }) => {
           {/* 3 row */}
           <div className="flex justify-between items-center mt-2">
             {/* rating */}
-            <span className="flex">
-              <FaStar className="text-orange-300"></FaStar>
-              <FaStar className="text-orange-300"></FaStar>
-              <FaStar className="text-orange-300"></FaStar>
-              <FaStar className="text-orange-300"></FaStar>
-            </span>
+            <Rating
+              style={{ maxWidth: 100 }}
+              value={numberRating}
+              itemStyles={myStyles}
+              readOnly
+            ></Rating>
             <div className="flex items-center">
               <span className=" hover:bg-gray-300 hover:rounded-full p-2 text-2xl text-red-400 cursor-pointer">
-                <button onClick={()=> handleDelete(_id)}><MdDelete /></button>
+                <button onClick={() => handleDelete(_id)}>
+                  <MdDelete />
+                </button>
               </span>
               <button className="btn rounded-full text-xl hover:bg-[#E4D804] hover:border-black">
                 <FaRegHeart></FaRegHeart>
@@ -83,9 +93,7 @@ const AllMovie = ({ movie }) => {
             </div>
           </div>
           <div className="mt-10">
-            <Link to={
-              user ? `/movieDetails/${_id}` : '/login'
-            }>
+            <Link to={user ? `/movieDetails/${_id}` : "/login"}>
               <button className="btn w-full bg-[#E4D804] hover:bg-black hover:text-white hover:border-[#E4D804]">
                 See Details
               </button>
