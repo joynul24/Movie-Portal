@@ -1,5 +1,6 @@
 import Banner from "../../Banner/Banner";
 import FeaturedMovie from "../../HomeRoute/FeaturedMovie";
+import Pricing from "../../HomeRoute/Pricing";
 import Service from "../../HomeRoute/Service";
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
       <Banner></Banner>
       <FeaturedMovie></FeaturedMovie>
       <Service></Service>
+      <Pricing></Pricing>
     </>
   );
 }
