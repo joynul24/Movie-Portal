@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
-import {useState } from "react";
+import {useContext, useState } from "react";
 import { FaRegHeart, FaStar } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../porvider/AuthProvider";
 
 const AllMovie = ({ movie }) => {
   const { _id, title, genre, duration, year, poster } = movie;
   const allMovies = useLoaderData();
   const [movies, setMovies] = useState(allMovies);
+  const {user} = useContext(AuthContext);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -22,7 +24,7 @@ const AllMovie = ({ movie }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // delete from the database
-        fetch(`https://a10-movie-portal-server-jyig3uo1g-joynul2024s-projects.vercel.app/${id}`, {
+        fetch(`https://a10-movie-portal-server.vercel.app/movies/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -81,7 +83,9 @@ const AllMovie = ({ movie }) => {
             </div>
           </div>
           <div className="mt-10">
-            <Link to={`/CardDetails/${_id}`}>
+            <Link to={
+              user ? `/movieDetails/${_id}` : '/login'
+            }>
               <button className="btn w-full bg-[#E4D804] hover:bg-black hover:text-white hover:border-[#E4D804]">
                 See Details
               </button>

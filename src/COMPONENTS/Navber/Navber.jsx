@@ -1,14 +1,17 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import {} from "./Navber.css";
 import { useContext } from "react";
 import { AuthContext } from "../../porvider/AuthProvider";
 
 const Navber = () => {
   const { user, signOutUser } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const handleSignOut = () => {
     signOutUser()
-      .then(() => {})
+      .then(() => {
+        navigate('/')
+      })
       .catch((error) => {
         console.log("Error", error.message);
       });
