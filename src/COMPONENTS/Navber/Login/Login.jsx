@@ -13,6 +13,8 @@ const Login = () => {
     e.preventDefault()
     const email = e.target.email.value;
     const password = e.target.password.value;
+    
+
     signInUser(email, password)
     .then(result => {
       navigate('/')

@@ -5,8 +5,14 @@ import { AuthContext } from "../../porvider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const { createUser, setUser, updateUserProfile, signInWithGoogle, errorMessage, setErrorMessage } =
-    useContext(AuthContext);
+  const {
+    createUser,
+    setUser,
+    updateUserProfile,
+    signInWithGoogle,
+    errorMessage,
+    setErrorMessage,
+  } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -15,7 +21,7 @@ const Register = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // console.log(name, photo,email,password);
+  
 
     createUser(email, password)
       .then((result) => {
@@ -30,18 +36,17 @@ const Register = () => {
       .then(() => {
         e.target.reset();
         navigate("/");
-       
       })
       .catch((error) => {
-        setErrorMessage(error.message)
+        setErrorMessage(error.message);
       })
       .catch((error) => {
-        setErrorMessage(error.message)
+        setErrorMessage(error.message);
       });
 
-      if(errorMessage) {
-        toast.success('auth/email-already-in-use');
-      }
+    if (errorMessage) {
+      toast.warning("auth/email-already-in-use");
+    }
   };
   const handleGoogleSignIn = () => {
     signInWithGoogle()
@@ -54,7 +59,7 @@ const Register = () => {
         }
       })
       .catch((error) => {
-        setErrorMessage(error.message)
+        setErrorMessage(error.message);
       });
   };
 

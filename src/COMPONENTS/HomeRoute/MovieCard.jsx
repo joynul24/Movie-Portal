@@ -11,7 +11,6 @@ const MovieCard = ({ movie, movies }) => {
   const { _id, title, rating, genre, duration, year, poster } = movie;
   const [allMovies, setAllMovies] = useState(movies);
   const numberRating = parseInt(rating)
-  console.log(numberRating);
   const {user} = useContext(AuthContext);
   const myStyles = {
      itemShapes: Star ,
