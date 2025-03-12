@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./COMPONENTS/ErrorPage.jsx";
 import MainLayout from "./MainLayout/MainLayout.jsx";
 import AllMovies from "./COMPONENTS/NavPages/AllMovies/AllMovies.jsx";
-import ContactUs from "./COMPONENTS/NavPages/ContactUs/ContactUs.jsx";
 import AddMovies from "./COMPONENTS/NavPages/AddMovies/AddMovies.jsx";
 import MyFavorite from "./COMPONENTS/NavPages/MyFavorite/MyFavorite.jsx";
 import Home from "./COMPONENTS/NavPages/Home/Home.jsx";
@@ -17,6 +16,7 @@ import Register from "./COMPONENTS/Register/Register.jsx";
 import Login from "./COMPONENTS/Navber/Login/Login.jsx";
 import AuthProvider from "./porvider/AuthProvider.jsx";
 import PrivateRoute from "./COMPONENTS/routes/PrivateRoute.jsx";
+import AboutUs from "./COMPONENTS/AboutUs/AboutUs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,12 +35,12 @@ const router = createBrowserRouter([
         loader: () => fetch("https://a10-movie-portal-server.vercel.app/movies"),
       },
       {
-        path: "/contactUs",
-        element: <ContactUs></ContactUs>,
-      },
-      {
         path: "/addMovies",
         element:<PrivateRoute> <AddMovies></AddMovies></PrivateRoute>,
+      },
+      {
+        path: '/aboutUs',
+        element: <AboutUs></AboutUs>
       },
       {
         path: "/myFavorite",

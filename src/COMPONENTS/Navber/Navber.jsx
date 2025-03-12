@@ -26,7 +26,7 @@ const Navber = () => {
         <NavLink to="/allMovies">All Movies</NavLink>
       </li>
       <li>
-        <NavLink to="/contactUs">Contact Us</NavLink>
+        <NavLink to="/aboutUs">About Us</NavLink>
       </li>
       {user && (
         <>
