@@ -13,7 +13,7 @@ const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer mt-10 pb-20">
           {/* box-1 */}
-          <div className="bg-[#1F1E24] rounded-xl hover:border-2 hover:border-[#E4D804] px-15 py-10 cursor-pointer">
+          <div className="bg-[#1F1E24] rounded-xl border-[#1F1E24] border-2 hover:border-[#E4D804] px-15 py-10 cursor-pointer transition-colors duration-600">
             <h4 className="text-center f-oswald font-bold">premium</h4>
             <div className="flex justify-center mt-10 mb-10">
               <div className="bg-[#E4D804] text-black p-6 rounded-xl">
@@ -63,7 +63,7 @@ const Pricing = () => {
             </div>
           </div>
           {/* box-2 */}
-          <div className="bg-[#1F1E24] rounded-xl hover:border-2 hover:border-[#E4D804] px-15 py-10 cursor-pointer">
+          <div className="bg-[#1F1E24] rounded-xl border-2 border-[#E4D804] px-15 py-10 cursor-pointer">
             <h4 className="text-center f-oswald font-bold">standard</h4>
             <div className="flex justify-center mt-10">
               <div className="bg-[#E4D804] text-black p-6 rounded-xl mb-10">
@@ -113,7 +113,7 @@ const Pricing = () => {
             </div>
           </div>
           {/* box-2 */}
-          <div className="bg-[#1F1E24] rounded-xl hover:border-2 hover:border-[#E4D804] px-15 py-10 cursor-pointer">
+          <div className="bg-[#1F1E24] rounded-xl border-[#1F1E24] border-2 hover:border-[#E4D804] px-15 py-10 cursor-pointer transition-colors duration-600">
             <h4 className="text-center f-oswald font-bold">premium</h4>
             <div className="flex justify-center mt-10">
               <div className="bg-[#E4D804] text-black p-6 rounded-xl mb-10">

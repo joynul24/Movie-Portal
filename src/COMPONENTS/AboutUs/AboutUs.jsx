@@ -7,7 +7,7 @@ const AboutUs = () => {
         <div className="collapse-title font-semibold">
           What are the top trending movies right now?
         </div>
-        <div className="collapse-content text-sm">
+        <div className="collapse-content text-sm text-gray-600">
           Our website updates the trending movies list daily. You can check the
           Trending section to find the most popular movies based on user ratings
           and views.
@@ -19,7 +19,7 @@ const AboutUs = () => {
         <div className="collapse-title font-semibold">
           How can I watch movies for free on this website?
         </div>
-        <div className="collapse-content text-sm">
+        <div className="collapse-content text-sm text-gray-600">
           You can watch movies for free by browsing our Free Movies section.
           Some content may require an account, but no payment is needed for most
           movies.
@@ -31,7 +31,7 @@ const AboutUs = () => {
         <div className="collapse-title font-semibold">
           Do you offer movie recommendations based on my preferences?
         </div>
-        <div className="collapse-content text-sm">
+        <div className="collapse-content text-sm text-gray-600">
           Yes! Once you create an account and rate a few movies, our system will
           suggest movies based on your taste and viewing history.
         </div>
@@ -42,7 +42,7 @@ const AboutUs = () => {
         <div className="collapse-title font-semibold">
           How often is the movie database updated?
         </div>
-        <div className="collapse-content text-sm">
+        <div className="collapse-content text-sm text-gray-600">
           We update our movie database daily to include the latest releases,
           trending films, and user-requested content.
         </div>
@@ -53,7 +53,7 @@ const AboutUs = () => {
         <div className="collapse-title font-semibold">
           Can I request a specific movie to be added?
         </div>
-        <div className="collapse-content text-sm">
+        <div className="collapse-content text-sm text-gray-600">
           Absolutely! If you don’t find a movie on our website, you can request
           it through our Request a Movie section, and we’ll try to add it as
           soon as possible.

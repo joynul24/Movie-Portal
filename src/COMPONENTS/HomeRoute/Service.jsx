@@ -67,9 +67,7 @@ const Service = () => {
                   </p>
                 </div>
               </div>
-              <button className="btn bg-[#E4D804] hover:bg-transparent hover:text-white mt-5">
-                Download <FaDownload />
-              </button>
+              <a href="" download={'https://joynul2024.sirv.com/movie%20portal%20resource/services_img.jpg'} className="btn bg-[#E4D804] hover:bg-transparent hover:text-white mt-5">Download <FaDownload /></a>
             </div>
           </div>
         </div>
