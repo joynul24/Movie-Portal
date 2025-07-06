@@ -2,7 +2,7 @@
 
 2. A Movie Portal Website typically provides information on new and old movies, including reviews, ratings, trailers, watchlists, and streaming links. It can be a complete platform for movie enthusiasts, where they can explore movie details and give ratings.
 
-3.🔗 Live URL: https://a10-movie-portal.web.app
+3.🔗 Live URL: https://popural-movies.netlify.app/
 
 4.✨ Key Features: 
 ✅ Movie Database – Extensive collection of new and old movies with detailed information.
