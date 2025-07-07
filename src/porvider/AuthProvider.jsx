@@ -19,7 +19,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -33,6 +33,9 @@ const AuthProvider = ({ children }) => {
   };
 
   const signInWithGoogle = () => {
+    googleProvider.setCustomParameters({
+      prompt: "select_account",
+    });
     return signInWithPopup(auth, googleProvider);
   };
 
